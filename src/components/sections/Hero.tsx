@@ -68,7 +68,7 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, todayT
                     </Stack>
 
                     {/* Liten “info-rad” som gör det mer som en riktig pizzeriasida */}
-                    <Card variant="outlined" sx={{ mt: 2, maxWidth: 560 }}>
+                    <Card variant="outlined" sx={{ mt: 2, width: "100%" }}>
                         <CardContent sx={{ py: 1.5, "&:last-child": { pb: 1.5 } }}>
                             <Stack
                                 direction={{ xs: "column", sm: "row" }}

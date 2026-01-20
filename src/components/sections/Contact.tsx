@@ -3,7 +3,7 @@ import type { ContactData } from "@/templates/types";
 
 export default function Contact({ title, phone, email, cta }: ContactData) {
     return (
-        <Box id="kontakt" sx={{ py: 6 }}>
+        <Box id="kontakt" sx={{ py: 6 , scrollMarginTop: 20}}>
             <Card variant="outlined">
                 <CardContent>
                     <Typography variant="h4" sx={{ mb: 1 }}>

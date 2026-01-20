@@ -25,13 +25,13 @@ type Props = {
 
 export default function CategorizedMenuSection({
                                                    menu,
-                                                   defaultExpandedIds = ["pizza-classic"],
+                                                   //defaultExpandedIds = ["pizza-class1"], ta bort för auto expand
                                                    showIngredients = true,
                                                    showTags = true,
                                                    showAllergens = true,
                                                }: Props) {
     return (
-        <Box id="menu" sx={{ py: 6 }}>
+        <Box id="menu" sx={{ py: 6, scrollMarginTop: 20 }}>
             <Typography variant="h4" sx={{ mb: 2 }}>
                 {menu.title}
             </Typography>
@@ -40,7 +40,7 @@ export default function CategorizedMenuSection({
                 {menu.categories.map((cat) => (
                     <Accordion
                         key={cat.id}
-                        defaultExpanded={defaultExpandedIds.includes(cat.id)}
+                        //defaultExpanded={defaultExpandedIds.includes(cat.id)} ta bort för auto expand
                         disableGutters
                         elevation={0}
                         sx={{

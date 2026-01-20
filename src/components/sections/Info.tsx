@@ -3,7 +3,7 @@ import type { InfoData } from "@/templates/types";
 
 export default function Info({ title, addressLines, openingHours }: InfoData) {
     return (
-        <Box id="hitta-hit" sx={{ py: 6 }}>
+        <Box id="hitta-hit" sx={{ py: 6, scrollMarginTop: 20, mb: 0 }}>
             <Typography variant="h4" sx={{ mb: 2 }} textAlign="center">
                 {title}
             </Typography>

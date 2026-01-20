@@ -26,7 +26,7 @@ export const pizzeriaMenu: CategorizedMenu = {
     title: "Meny",
     categories: [
         {
-            id: "pizza-classic",
+            id: "pizza-class1",
             title: "Pizzor kategori 1",
             note: "Note",
             items: [
@@ -122,7 +122,7 @@ export const pizzeriaMenu: CategorizedMenu = {
         },
 
         {
-            id: "pizza-premium",
+            id: "pizza-class2",
             title: "Pizzor kategori 2",
             note: "note",
             items: [
@@ -210,7 +210,7 @@ export const pizzeriaMenu: CategorizedMenu = {
         },
 
         {
-            id: "pizza-delux",
+            id: "pizza-class3",
             title: "Pizzor kategori 3",
             note: "note",
             items: [

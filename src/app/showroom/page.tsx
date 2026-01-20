@@ -22,7 +22,7 @@ export default function ShowroomPage() {
         <StickyNav
            brand={pizzeriaTemplate.hero.title}
            links={[
-               {label: "Meny", href: "#meny"},
+               {label: "Meny", href: "#menu"},
                {label: "Hitta hit", href: "#hitta-hit"},
                {label: "Kontakta oss", href: "#kontakt"}
            ]}
