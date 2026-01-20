@@ -1,5 +1,6 @@
-import { AppBar, Box, Container, Link as MuiLink, Stack, Toolbar, Typography } from "@mui/material";
-
+"use client"
+import { AppBar,Container, Link as MuiLink, Stack, Toolbar, Typography } from "@mui/material";
+import {clearHash} from "@/lib/clearHash";
 type NavLink = { label: string; href: string };
 
 type Props = {
@@ -22,7 +23,19 @@ export default function StickyNav({ brand, links }: Props) {
             <Toolbar disableGutters>
                 <Container maxWidth="md">
                     <Stack direction="row" alignItems="center" justifyContent="space-between">
-                        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+                        <Typography
+                            component="button"
+                            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                            variant="subtitle1"
+                            sx={{
+                                fontWeight: 700,
+                                border: 0,
+                                background: "transparent",
+                                padding: 0,
+                                color: "inherit",
+                                cursor: "pointer",
+                            }}
+                        >
                             {brand}
                         </Typography>
 
@@ -34,6 +47,9 @@ export default function StickyNav({ brand, links }: Props) {
                                     underline="hover"
                                     color="text.secondary"
                                     sx={{ fontSize: 14 }}
+                                    onClick={() =>{
+                                        setTimeout(clearHash, 0)
+                                    }}
                                 >
                                     {l.label}
                                 </MuiLink>

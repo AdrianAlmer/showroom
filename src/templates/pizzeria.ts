@@ -4,7 +4,7 @@ export const pizzeriaTemplate: TemplateData = {
     id: "pizzeria",
     name: "Pizzeria",
     hero: {
-        title: "Marios Pizzeria",
+        title: "Yoshis Pizzeria",
         subtitle: "Äkta mammamia pizza runt hörnet.",
         /*primaryCta: { label: "Kontakta oss", href: "#kontakt" },*/
 
@@ -32,7 +32,15 @@ export const pizzeriaTemplate: TemplateData = {
     contact: {
         title: "Kontakta oss",
         phone: "+46 12 345 67 89",
-        email: "hej@mariospizzeria.se",
-        cta: { label: "Ring nu", href: "tel:+46123456789" },
+        email: "hej@yoshispizzeria.se",
+        /*cta: { label: "Ring nu", href: "tel:+46123456789" },*/
+        socials:{
+            facebook: "https://www.facebook.com/",
+            instagram: "https://www.instagram.com/",
+            twitter: "https://www.twitter.com/",
+            linkedin: "https://www.linkedin.com/in/",
+            tiktok: "https://www.tiktok.com/",
+        },
     },
+
 };

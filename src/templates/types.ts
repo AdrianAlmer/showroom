@@ -28,7 +28,16 @@ export type ContactData = {
     phone?: string;
     email?: string;
     cta?: { label: string; href: string };
+    socials: socialsData;
 };
+
+export type socialsData = {
+    facebook?: string;
+    instagram?: string;
+    twitter?: string;
+    linkedin?: string;
+    tiktok?: string;
+}
 
 export type TemplateData = {
     id: string;
@@ -37,6 +46,7 @@ export type TemplateData = {
     menu?: MenuData;
     info: InfoData;
     contact: ContactData;
+
 };
 
 export type WeeklyHours = {
