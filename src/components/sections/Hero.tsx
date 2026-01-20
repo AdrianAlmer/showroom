@@ -1,11 +1,10 @@
 "use client"
 
 
-import {Box, Typography, Stack, Button, Card, CardContent, Divider, Link as MuiLink} from "@mui/material";
+import {Box, Typography, Stack, Button, Card, CardContent} from "@mui/material";
 import type {HeroData} from "@/templates/types";
 
 
-type HeroNavItem = {label: string; href: string;};
 
 type HeroProps = HeroData & {
     todayText?: string | null;
@@ -29,7 +28,7 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, todayT
                 boxShadow: 1,
             }}
         >
-            {/* Enkel “bakgrundskänsla” utan bild */}
+            {/* bakgrundsbild får byta till nått sen, gradiant så länge */}
             <Box
                 aria-hidden
                 sx={{
@@ -67,7 +66,7 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, todayT
                         )}
                     </Stack>
 
-                    {/* Liten “info-rad” som gör det mer som en riktig pizzeriasida */}
+                    {/*info rad*/}
                     <Card variant="outlined" sx={{ mt: 2, width: "100%" }}>
                         <CardContent sx={{ py: 1.5, "&:last-child": { pb: 1.5 } }}>
                             <Stack
