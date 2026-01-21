@@ -8,7 +8,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 
-export default function Contact({ title, phone, email, cta, socials }: ContactData) {
+export default function Contact({ title, phone, email, socials }: ContactData) {
     const hasSocials = Boolean(socials?.linkedin || socials?.twitter || socials?.facebook || socials?.instagram || socials?.tiktok);
     return (
         <Box id="kontakt" sx={{ py: 6 , scrollMarginTop: 20}}>

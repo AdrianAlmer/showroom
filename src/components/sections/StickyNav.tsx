@@ -6,7 +6,6 @@ import { clearHash } from "@/lib/clearHash";
 import MobileDrawerMenu from "@/components/sections/MobileDrawerMenu";
 import PaletteOutlinedIcon from "@mui/icons-material/PaletteOutlined";
 import {useThemeController} from "@/theme/ThemeController";
-import {useTheme} from "@mui/system";
 
 type NavLink = { label: string; href: string };
 
