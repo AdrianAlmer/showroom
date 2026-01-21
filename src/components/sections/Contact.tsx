@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, IconButton, Stack, Typography } from "@mui/material";
+import { Box, Card, CardContent, IconButton, Stack, Typography } from "@mui/material";
 import { Link as MuiLink } from "@mui/material";
 import type { ContactData } from "@/templates/types";
 import FacebookIcon from "@mui/icons-material/Facebook";

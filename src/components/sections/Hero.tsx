@@ -11,7 +11,7 @@ type HeroProps = HeroData & {
 }
 
 
-export default function Hero({ title, subtitle, primaryCta, secondaryCta, todayText }: HeroProps) {
+export default function Hero({ title, subtitle, primaryCta, secondaryCta, todayText, image }: HeroProps) {
 
 
 
@@ -28,18 +28,30 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, todayT
                 boxShadow: 1,
             }}
         >
-            {/* bakgrundsbild får byta till nått sen, gradiant så länge */}
+            {image?.src && (
+                <Box
+                    aria-hidden
+                    sx={{
+                        position: "absolute",
+                        inset: 0,
+                        backgroundImage: `url(${image.src})`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: image.position ?? "center",
+                        transform: "scale(1.02)",
+                    }}
+                />
+            )}
             <Box
                 aria-hidden
                 sx={{
                     position: "absolute",
                     inset: 0,
                     background:
-                        "radial-gradient(900px circle at 20% 10%, rgba(198,40,40,0.12), transparent 55%), radial-gradient(900px circle at 80% 30%, rgba(46,125,50,0.10), transparent 55%)",
+                        "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.40) 45%, rgba(0,0,0,0.55) 100%)",
                     pointerEvents: "none",
                 }}
             />
-
             <Box sx={{ position: "relative", px: { xs: 2, sm: 4 } }}>
 
                 <Stack spacing={2}>

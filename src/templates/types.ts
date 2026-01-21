@@ -6,6 +6,14 @@ export type HeroData = {
     subtitle?: string;
     primaryCta?: { label: string; href?: string };
     secondaryCta?: { label: string; href?: string };
+    image?: HeroImage;
+};
+
+export type HeroImage = {
+    src: string;
+    alt: string;
+    opacity?: number;
+    position?: string;
 };
 
 export type MenuData = {

@@ -1,6 +1,9 @@
-"use client"
-import { AppBar,Container, Link as MuiLink, Stack, Toolbar, Typography } from "@mui/material";
-import {clearHash} from "@/lib/clearHash";
+"use client";
+
+import {AppBar, Container, Link as MuiLink, Stack, Toolbar, Typography,} from "@mui/material";
+import { clearHash } from "@/lib/clearHash";
+import MobileDrawerMenu from "@/components/sections/MobileDrawerMenu";
+
 type NavLink = { label: string; href: string };
 
 type Props = {
@@ -23,23 +26,38 @@ export default function StickyNav({ brand, links }: Props) {
             <Toolbar disableGutters>
                 <Container maxWidth="md">
                     <Stack direction="row" alignItems="center" justifyContent="space-between">
-                        <Typography
-                            component="button"
-                            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                            variant="subtitle1"
-                            sx={{
-                                fontWeight: 700,
-                                border: 0,
-                                background: "transparent",
-                                padding: 0,
-                                color: "inherit",
-                                cursor: "pointer",
-                            }}
-                        >
-                            {brand}
-                        </Typography>
+                        {/* Vänster: Brand + (mobil) hamburger */}
+                        <Stack direction="row" alignItems="center" spacing={1}>
+                            {/* Mobilmeny: endast xs-sm */}
+                            <MobileDrawerMenu
+                                brand={brand}
+                                links={links}
+                                //cta={{ label: "Beställ", href: "#menu" }}
+                            />
 
-                        <Stack direction="row" spacing={2} sx={{ flexWrap: "wrap" }}>
+                            <Typography
+                                component="button"
+                                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                                variant="subtitle1"
+                                sx={{
+                                    fontWeight: 700,
+                                    border: 0,
+                                    background: "transparent",
+                                    padding: 0,
+                                    color: "inherit",
+                                    cursor: "pointer",
+                                }}
+                            >
+                                {brand}
+                            </Typography>
+                        </Stack>
+
+                        {/* Desktop-länkar: md+ */}
+                        <Stack
+                            direction="row"
+                            spacing={2}
+                            sx={{ flexWrap: "wrap", display: { xs: "none", md: "flex" } }}
+                        >
                             {links.map((l) => (
                                 <MuiLink
                                     key={l.href}
@@ -47,8 +65,8 @@ export default function StickyNav({ brand, links }: Props) {
                                     underline="hover"
                                     color="text.secondary"
                                     sx={{ fontSize: 14 }}
-                                    onClick={() =>{
-                                        setTimeout(clearHash, 0)
+                                    onClick={() => {
+                                        setTimeout(clearHash, 0);
                                     }}
                                 >
                                     {l.label}

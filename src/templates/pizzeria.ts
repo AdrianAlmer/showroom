@@ -7,6 +7,12 @@ export const pizzeriaTemplate: TemplateData = {
         title: "Yoshis Pizzeria",
         subtitle: "Äkta mammamia pizza runt hörnet.",
         /*primaryCta: { label: "Kontakta oss", href: "#kontakt" },*/
+        image:{
+            src: "/images/pizza/pizza1.webp",
+            alt: "Bild på en pizza",
+            opacity: 0.18,
+            position: "center",
+        },
 
     },
     info: {
@@ -42,5 +48,6 @@ export const pizzeriaTemplate: TemplateData = {
             tiktok: "https://www.tiktok.com/",
         },
     },
+
 
 };
