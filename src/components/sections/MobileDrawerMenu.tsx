@@ -89,7 +89,8 @@ export default function MobileDrawerMenu({ brand, links, cta }: Props) {
                             </Button>
                         </Box>
                     )}
-                    <Divider sx={{ my: 2 }} />
+                    {/*Ändra tema i drawern*/}
+                    {/*<Divider sx={{ my: 2 }} />
                     <Typography variant="caption" color="text.secondary" sx={{ display: "block", mb: 1 }}>
                         Tema
                     </Typography>
@@ -133,7 +134,7 @@ export default function MobileDrawerMenu({ brand, links, cta }: Props) {
                         >
                             6
                         </Button>
-                    </ButtonGroup>
+                    </ButtonGroup>*/}
 
                 </Box>
             </Drawer>
