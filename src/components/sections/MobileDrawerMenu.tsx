@@ -5,6 +5,8 @@ import {Drawer,Box,IconButton,Stack,Typography,Divider,List,ListItemButton,ListI
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import {clearHash} from "@/lib/clearHash";
+import { ButtonGroup } from "@mui/material";
+import { useThemeController } from "@/theme/ThemeController";
 
 type NavLink = { label: string; href: string };
 
@@ -15,7 +17,9 @@ type Props = {
 };
 
 export default function MobileDrawerMenu({ brand, links, cta }: Props) {
+
     const [open, setOpen] = React.useState(false);
+    const { themeKey, setThemeKey } = useThemeController();
 
     const close = () => setOpen(false);
     const openMenu = () => setOpen(true);
@@ -42,11 +46,11 @@ export default function MobileDrawerMenu({ brand, links, cta }: Props) {
                 onClose={close}
                 slotProps={{
                     paper: {
-                        sx: { width: 320, maxWidth: "85vw" },
+                        sx: { width: 320, maxWidth: "85vw", display: "flex", flexDirection: "column" },
                     },
                 }}
             >
-                <Box sx={{ p: 2 }}>
+                <Box sx={{ p: 2, display: "flex", flexDirection: "column", flex: 1 }}>
                     <Stack direction="row" alignItems="center" justifyContent="space-between">
                         <Typography variant="h6">{brand}</Typography>
                         <IconButton aria-label="Close menu" onClick={close} sx={{color: "text.primary"}} >
@@ -70,6 +74,8 @@ export default function MobileDrawerMenu({ brand, links, cta }: Props) {
                         ))}
                     </List>
 
+                    <Box sx={{ flexGrow: 1 }} />
+
                     {cta && (
                         <Box sx={{ pt: 2 }}>
                             <Button
@@ -83,6 +89,52 @@ export default function MobileDrawerMenu({ brand, links, cta }: Props) {
                             </Button>
                         </Box>
                     )}
+                    <Divider sx={{ my: 2 }} />
+                    <Typography variant="caption" color="text.secondary" sx={{ display: "block", mb: 1 }}>
+                        Tema
+                    </Typography>
+
+                    <ButtonGroup fullWidth variant="outlined" size="small">
+                        <Button
+                            onClick={() => setThemeKey("theme1")}
+                            variant={themeKey === "theme1" ? "contained" : "outlined"}
+                        >
+                            1
+                        </Button>
+                        <Button
+                            onClick={() => setThemeKey("theme2")}
+                            variant={themeKey === "theme2" ? "contained" : "outlined"}
+                        >
+                            2
+                        </Button>
+                        <Button
+                            onClick={() => setThemeKey("theme3")}
+                            variant={themeKey === "theme3" ? "contained" : "outlined"}
+                        >
+                            3
+                        </Button>
+                    </ButtonGroup>
+                    <ButtonGroup fullWidth variant="outlined" size="small">
+                        <Button
+                            onClick={() => setThemeKey("theme4")}
+                            variant={themeKey === "theme4" ? "contained" : "outlined"}
+                        >
+                            4
+                        </Button>
+                        <Button
+                            onClick={() => setThemeKey("theme5")}
+                            variant={themeKey === "theme5" ? "contained" : "outlined"}
+                        >
+                            5
+                        </Button>
+                        <Button
+                            onClick={() => setThemeKey("theme6")}
+                            variant={themeKey === "theme6" ? "contained" : "outlined"}
+                        >
+                            6
+                        </Button>
+                    </ButtonGroup>
+
                 </Box>
             </Drawer>
         </>

@@ -55,12 +55,14 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, todayT
             <Box sx={{ position: "relative", px: { xs: 2, sm: 4 } }}>
 
                 <Stack spacing={2}>
-                    <Typography variant="h3" component="h1" sx={{ letterSpacing: -0.5 }}>
+                    {/*fast färg på hero titeln*/}
+                    <Typography variant="h3" component="h1" sx={{ letterSpacing: -0.5, color: "#FFFFFF",  textShadow: "0 2px 10px rgba(0,0,0,0.55)" }}>
                         {title}
                     </Typography>
-
+                    {/*fast färg på hero subtiteln*/}
                     {subtitle && (
-                        <Typography variant="subtitle1" color="text.secondary" sx={{ maxWidth: 680 }}>
+
+                        <Typography variant="subtitle1" color="text.secondary" sx={{ maxWidth: 680,  color: "#FFFFFFCC", textShadow: "0 2px 10px rgba(0,0,0,0.45)"}}>
                             {subtitle}
                         </Typography>
                     )}
